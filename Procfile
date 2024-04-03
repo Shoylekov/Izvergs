@@ -1,1 +1,1 @@
- web gunicorn izvergs:app
+web: gunicorn base:app
