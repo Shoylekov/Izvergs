@@ -1041,6 +1041,17 @@ a {
   margin: 1rem 0;
 }
 
+.room__description {
+  padding: 0rem 0rem;
+  background: var(--color-dark-light);
+  color: var(--color-light);
+  display: inline-block;
+  font-size: 1.4rem;
+  border-radius: 1.5rem;
+  margin: 1rem 0;
+}
+
+
 .room__conversation {
   margin-top: 1rem;
   margin-bottom: 4rem;
@@ -1098,38 +1109,86 @@ a {
   margin-top: 0.5rem;
 }
 
-.room__message form {
+.room__message {
+  /* Your existing styles */
+  padding: 2rem;
+  position: absolute;
+  z-index: 111;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+}
+
+.message-form {
+  /* Ensure form elements are displayed in a row */
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
-.room__message textarea,
-.room__message input[type="file"],
-.room__message button {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+.message-inputs {
+  /* Ensure input elements are displayed in a row */
+  display: flex;
+  align-items: center;
+  width: 100%; /* Ensure inputs fill the available space */
 }
 
-.room__message textarea,
-.room__message input[type="file"] {
-  height: 2.5rem; /* Adjust the height as needed */
+.input-container {
+  /* Set relative positioning for input container */
+  position: relative;
+  /* Allow input field and buttons to grow */
+  flex-grow: 1;
 }
 
-.room__message button {
-  background-color: #007bff;
-  color: #fff;
+.message-input {
+  /* Your existing styles for the input field */
+  resize: none;
+  background-color: var(--color-dark-light);
+  color: var(--color-light-gray);
   border: none;
+  outline: none;
+  border-radius: 0.7rem;
+  height: 4rem;
+  width: 100%; /* Fill the available space */
+  padding-right: 80px; /* Add space for buttons */
+}
+
+
+.btn1,
+.custom-file-upload {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  border: none;
+  color: #333;
+  font-size: 24px;
   cursor: pointer;
+  transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.room__message button:hover {
-  background-color: #0056b3;
+.custom-file-upload {
+  display: inline-block;
+  padding: 16px 14px;
 }
 
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+
+.btn1 {
+  right: 40px;
+  transform: translateY(-50%);
+}
+
+.custom-file-upload {
+  right: 20px;
+  transform: translateY(-47%);
+}
+
+.btn1:hover,
+.custom-file-upload:hover {
+  color: #992323;
+}
 
 
 .participants__top span {
